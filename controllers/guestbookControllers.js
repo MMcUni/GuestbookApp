@@ -23,8 +23,26 @@ exports.entries_list = function (req, res) {
 exports.landing_page = function (req, res) {
     res.render("entries", {
         title: "Guest Book",
-        subject: "Good day out",
-        contents: "We had a really good time visiting the museum.",
+        entries: [
+            {
+                subject: "Good day out",
+                contents: "We had a really good time visiting the museum.",
+                author: "John Doe",
+                published: "2023-03-01",
+            },
+            {
+                subject: "Good place to be on a rainy day.",
+                contents: "Nice paintings too.",
+                author: "Jane Smith",
+                published: "2023-03-03",
+            },
+            {
+                subject: "Yummy",
+                contents: "Good food :-).",
+                author: "Bob Brown",
+                published: "2023-03-05",
+            },
+        ],
     });
 };
 
@@ -40,21 +58,3 @@ exports.peters_entries = function (req, res) {
     res.send("<h1>Processing Peter's Entries, see terminal</h1>");
     guestBook.getPetersEntries();
 };
-
-res.render("entries", {
-    title: "Guest Book",
-    entries: [
-        {
-            subject: "Good day out",
-            contents: "We had a really good time visiting the museum.",
-        },
-        {
-            subject: "Good place to be on a rainy day.",
-            contents: "Nice paintings too.",
-        },
-        {
-            subject: "Yummy",
-            contents: "Good food :-).",
-        },
-    ],
-});

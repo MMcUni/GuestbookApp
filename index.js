@@ -31,3 +31,23 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}. Ctrl^c to quit.`);
 });
+
+app.get("/", (req, res) => {
+    res.render("entries", {
+        title: "Guest Book",
+        messages: [
+            {
+                subject: "Good day out",
+                contents: "We had a really good time visiting the museum.",
+            },
+            {
+                subject: "Good place to be on a rainy day.",
+                contents: "Nice paintings too.",
+            },
+            {
+                subject: "Yummy",
+                contents: "Good food :-).",
+            },
+        ],
+    });
+});

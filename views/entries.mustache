@@ -15,9 +15,13 @@
             </p>
             
             <div>
-                The author's name will be displayed here
+                <p>Written by {{author}}, on {{published}}</p>
             </div>
         </div>
     </div>
+    {{/entries}}
+    {{^entries}}
+    No entries yet.
+    {{/entries}}
 </body>
 </html>

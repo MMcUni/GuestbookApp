@@ -20,7 +20,7 @@ router.get('/about', function(req, res) {
 router.get('/peter', controller.peters_entries);
 
 // Handle 404 - Not found errors
-router.use(function(req, res) {
+router.all('*', function(req, res) {
     res.status(404);
     res.type('text/plain');
     res.send('404 Not found.');
