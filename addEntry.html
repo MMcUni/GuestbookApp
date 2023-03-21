@@ -3,26 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+    <!-- Page title -->
     <title>Add Entry - Guestbook</title>
   </head>
   <body>
     <div class="container">
+      <!-- Page headings -->
       <h1 class="text-center">Guest Book</h1>
       <h2 class="text-center">Write a New Entry</h2>
+      
+      <!-- Form to submit a new entry -->
       <form method="post" action="/submit-entry" role="form">
         <div class="form-group">
+          <!-- Author input field -->
           <label for="entry-author">Author</label>
           <input type="text" class="form-control" id="entry-author" name="entry-author" placeholder="Written by" required>
         </div>
         <div class="form-group">
+          <!-- Subject input field -->
           <label for="entry-subject">Subject</label>
           <input type="text" class="form-control" id="entry-subject" name="entry-subject" placeholder="Entry subject line" required>
         </div>
         <div class="form-group">
+          <!-- Entry text input field -->
           <label for="entry-text">Entry text</label>
           <textarea class="form-control" id="entry-text" name="entry-text" placeholder="Enter your comment here." rows="3" required></textarea>
         </div>
+        <!-- Submit button -->
         <div class="form-group text-center">
           <button type="submit" class="btn btn-primary">Post entry</button>
         </div>

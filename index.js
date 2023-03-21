@@ -1,15 +1,17 @@
+// Import required modules
 const express = require("express");
 const path = require("path");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const router = require("./routes/guestbookRoutes");
-const mustacheExpress = require('mustache-express');
+const mustacheExpress = require("mustache-express");
 
+// Create an Express app
 const app = express();
 
 // Set up mustache-express as the view engine
-app.engine('mustache', mustacheExpress());
-app.set('view engine', 'mustache');
-app.set('views', path.join(__dirname, 'views'));
+app.engine("mustache", mustacheExpress());
+app.set("view engine", "mustache");
+app.set("views", path.join(__dirname, "views"));
 
 // Middleware for serving static files
 const public = path.join(__dirname, "public");
@@ -24,5 +26,5 @@ app.use("/", router);
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}. Ctrl^c to quit.`);
+    console.log(`Server started on port ${PORT}. Ctrl^c to quit.`);
 });

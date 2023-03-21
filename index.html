@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <title>Express Demo Guestbook</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="text-center">Guest Book</h1>
-      <div class="text-right">
-        <button type="button" class="btn btn-primary" onclick="location.href='/new-entry'">Write in the guest book</button>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          I liked the exhibition
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Link to Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        />
+
+        <!-- Page title -->
+        <title>Express Demo Guestbook</title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Page heading -->
+            <h1 class="text-center">Guest Book</h1>
+
+            <!-- Write a new entry button -->
+            <div class="text-right">
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="location.href='/new-entry'"
+                >
+                    Write in the guest book
+                </button>
+            </div>
+
+            <!-- First entry -->
+            <div class="card">
+                <!-- Entry subject -->
+                <div class="card-header">I liked the exhibition</div>
+                <!-- Entry content and author information -->
+                <div class="card-body">
+                    <div class="card-text">nice</div>
+                    <div class="card-text">
+                        Written by <a href="#">Peter</a>, on 2020-02-16
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second entry -->
+            <div class="card">
+                <!-- Entry subject -->
+                <div class="card-header">Didn't like it</div>
+                <!-- Entry content and author information -->
+                <div class="card-body">
+                    <div class="card-text">A really terrible style!</div>
+                    <div class="card-text">
+                        Written by <a href="#">Ann</a>, on 2020-02-18
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-          <div class="card-text">
-            nice
-          </div>
-          <div class="card-text">
-            Written by <a href="#">Peter</a>, on 2020-02-16
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          Didn't like it
-        </div>
-        <div class="card-body">
-          <div class="card-text">
-            A really terrible style!
-          </div>
-          <div class="card-text">
-            Written by <a href="#">Ann</a>, on 2020-02-18
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
