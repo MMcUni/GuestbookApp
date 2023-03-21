@@ -8,6 +8,9 @@ const mustacheExpress = require("mustache-express");
 // Create an Express app
 const app = express();
 
+// redirect CSS bootstrap
+app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
+
 // Set up mustache-express as the view engine
 app.engine("mustache", mustacheExpress());
 app.set("view engine", "mustache");

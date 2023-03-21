@@ -21,9 +21,10 @@ exports.entries_list = function (req, res) {
 
 // Show the landing page
 exports.landing_page = function (req, res) {
-    // Render the landing page view
     res.render("entries", {
         title: "Guest Book",
+        subject: "Good day out",
+        contents: "We had a really good time visiting the museum.",
     });
 };
 
@@ -39,3 +40,21 @@ exports.peters_entries = function (req, res) {
     res.send("<h1>Processing Peter's Entries, see terminal</h1>");
     guestBook.getPetersEntries();
 };
+
+res.render("entries", {
+    title: "Guest Book",
+    entries: [
+        {
+            subject: "Good day out",
+            contents: "We had a really good time visiting the museum.",
+        },
+        {
+            subject: "Good place to be on a rainy day.",
+            contents: "Nice paintings too.",
+        },
+        {
+            subject: "Yummy",
+            contents: "Good food :-).",
+        },
+    ],
+});
