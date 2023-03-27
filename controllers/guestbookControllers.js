@@ -12,38 +12,34 @@ guestBook.init();
 
 // Get the list of guest book entries
 exports.entries_list = function (req, res) {
-    // Placeholder for not implemented feature
-    res.send(
-        "<h1>Not yet implemented: show a list of guest book entries.</h1>"
-    );
-    guestBook.getAllEntries();
+    guestBook
+        .getAllEntries()
+        .then((list) => {
+            res.render("entries", {
+                title: "Guest Book",
+                entries: list,
+            });
+            console.log("promise resolved");
+        })
+        .catch((err) => {
+            console.log("promise rejected", err);
+        });
 };
 
 // Show the landing page
 exports.landing_page = function (req, res) {
-    res.render("entries", {
-        title: "Guest Book",
-        entries: [
-            {
-                subject: "Good day out",
-                contents: "We had a really good time visiting the museum.",
-                author: "John Doe",
-                published: "2023-03-01",
-            },
-            {
-                subject: "Good place to be on a rainy day.",
-                contents: "Nice paintings too.",
-                author: "Jane Smith",
-                published: "2023-03-03",
-            },
-            {
-                subject: "Yummy",
-                contents: "Good food :-).",
-                author: "Bob Brown",
-                published: "2023-03-05",
-            },
-        ],
-    });
+    guestBook
+        .getAllEntries()
+        .then((list) => {
+            res.render("entries", {
+                title: "Guest Book",
+                entries: list,
+            });
+            console.log("promise resolved");
+        })
+        .catch((err) => {
+            console.log("promise rejected", err);
+        });
 };
 
 // Show the new entry page
