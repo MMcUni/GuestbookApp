@@ -54,3 +54,33 @@ exports.peters_entries = function (req, res) {
     res.send("<h1>Processing Peter's Entries, see terminal</h1>");
     guestBook.getPetersEntries();
 };
+
+exports.new_entries = function (req, res) {
+    res.render("newEntry", {
+        title: "Guest Book",
+    });
+};
+
+exports.post_new_entry = function (req, res) {
+    console.log("processing post-new_entry controller");
+    if (!req.body.author) {
+        response.status(400).send("Entries must have an author.");
+        return;
+    }
+    db.addEntry(req.body.author, req.body.subject, req.body.contents);
+    res.redirect("/");
+};
+
+exports.show_user_entries = function(req, res) {
+    console.log('filtering author name', req.params.author);
+    let user = req.params.author;
+    db.getEntriesByUser(user).then(
+    (entries) => {
+    res.render('entries', {
+    'title': 'Guest Book',
+    'entries': entries
+    });
+    }).catch((err) => {
+    console.log('error handling author posts', err);
+    });
+    }

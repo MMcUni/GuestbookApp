@@ -5,6 +5,14 @@
 </head>
 <body>
     <h1>{{title}}</h1>
+
+    <!-- Add the "Write into the guestbook" link here -->
+    <div class="text-right">
+        <a href="/new" class="btn btn-primary">
+            Write in the guestbook
+        </a>
+    </div>
+
     {{#entries}}
     <div>
         <div>
@@ -14,10 +22,9 @@
                 {{contents}}
             </p>
             
-<div class="card-text">
-Written by <a href="/posts/?author={{author}}">{{author}}</a>, on 
-{{published}}
-</div>
+<div class="card-footer">
+ <p>Written by <a href="/posts/{{author}}">{{author}}</a>, on {{published}}</p>
+</div> 
         </div>
     </div>
     {{/entries}}

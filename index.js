@@ -20,8 +20,8 @@ app.set("views", path.join(__dirname, "views"));
 const public = path.join(__dirname, "public");
 app.use(express.static(public));
 
-// Middleware for parsing request body
-app.use(bodyParser.urlencoded({ extended: false }));
+// URLencoded parser
+app.use(express.urlencoded({extended: false }));
 
 // Use guestbookRoutes for routing
 app.use("/", router);

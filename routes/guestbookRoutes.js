@@ -35,3 +35,10 @@ router.use(function(err, req, res, next) {
 
 // Export the router
 module.exports = router;
+
+// HTTP Get and HTTP Post requests
+router.get('/new', controller.new_entries);
+router.post('/new', controller.post_new_entry);
+
+// Show a users entries
+router.get('/posts/:author', controller.show_user_entries);
